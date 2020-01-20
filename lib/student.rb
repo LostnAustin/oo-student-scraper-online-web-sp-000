@@ -29,7 +29,7 @@ class Student
     #  binding.pry
       self.send(atts)
 
-    end
+#    end
   end
 
   def self.all
