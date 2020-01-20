@@ -33,35 +33,33 @@ class Scraper
     @doc = Nokogiri::HTML(html)
     platforms= {}
       @doc.css(".social-icon-container a").each do |platform|
-    #    binding.pry
+      #  binding.pry
         if platform.attr("href").include?("twitter")
           platforms[:twitter] = platform.attr("href")
         elsif platform.attr("href").include?("linkedin")
           platforms[:linkedin] = platform.attr("href")
         elsif platform.attr("href").include?("github")
           platforms[:github] = platform.attr("href")
-        elsif platform.attr('href').include?('.vitals-container h1') #need bio user name here
-          platforms[:blog] = platform.attr('href')
 
+        else #platform.attr('href').include?('.vitals-container h1') #need bio user name here
+          platforms[:blog] = platform.attr('href')
         end
       end
-
-      platforms[:profile_quote] = @doc.css(".vitals-text-container div.profile-quote").text,
+      platforms[:profile_quote] = @doc.css(".vitals-text-container div.profile-quote").text
       platforms[:bio] = @doc.css(".bio-content p").text
       platforms
-    # binding.pry
-
-    #  end
-      # @doc.css(".social-icon-container a")
-      # @doc.css(".social-icon-container a").attr('href')
-      # => #(Attr:0x127fbe0 { name = "href", value = "https://twitter.com/jmburges" })
-
-      #   @doc.css("social-icon-container").attr('href')
-      #  => nil
-      #  elsif platform.attr("href").include?("blog")
-      #      platforms[:blog] = platform.attr("href")
-
   end
 
 
 end
+# binding.pry
+
+#  end
+  # @doc.css(".social-icon-container a")
+  # @doc.css(".social-icon-container a").attr('href')
+  # => #(Attr:0x127fbe0 { name = "href", value = "https://twitter.com/jmburges" })
+
+  #   @doc.css("social-icon-container").attr('href')
+  #  => nil
+  #  elsif platform.attr("href").include?("blog")
+  #      platforms[:blog] = platform.attr("href")
