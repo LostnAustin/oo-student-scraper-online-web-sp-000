@@ -18,23 +18,16 @@ class Student
   end
 
   def self.create_from_collection(students_array)
-
     students_array.map do |student|
-      # unless students_array.include?(student[:name])
-  #   binding.pry
-  self.new(student)
-        # name = student[:name]
-        # location = student[:location]
-
-    #  end
+      self.new(student)
     end
   end
 
   def add_student_attributes(attributes_hash)
-
+    
   end
 
   def self.all
-
+    @@all
   end
 end
