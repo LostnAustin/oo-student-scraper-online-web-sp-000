@@ -26,7 +26,7 @@ class Student
   def add_student_attributes(attributes_hash)
   #  attributes_hash.each do |atts|
     #  atts.split(",")
-      self.send :[]= attributes_hash
+      @@all.send :[]= self
     #  binding.pry
   #  end
   end
