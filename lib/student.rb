@@ -27,7 +27,7 @@ class Student
     attributes_hash.each do |atts|
       atts.split(",")
       self.send :atts
-      binding.pry
+    #  binding.pry
     end
   end
 
