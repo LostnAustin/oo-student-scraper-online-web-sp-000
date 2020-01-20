@@ -26,8 +26,8 @@ class Student
   def add_student_attributes(attributes_hash)
     attributes_hash.each do |atts|
       #attributes = self.send(atts)
-      @@all.send(atts)
-      self
+      self.send(atts)
+      
     end
   end
 
