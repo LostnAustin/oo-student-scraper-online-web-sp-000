@@ -27,7 +27,8 @@ class Student
     attributes_hash.each do |key, value|
       #attributes = self.send(atts)
     #  binding.pry
-      self.send(key, value)
+    att = student.new
+      att.send(key, value)
 
     end
   end
