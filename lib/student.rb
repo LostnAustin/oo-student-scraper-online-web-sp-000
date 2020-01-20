@@ -28,7 +28,7 @@ class Student
       #attributes = self.send(atts)
       binding.pry
 
-      self.send(key, value)
+      self._send_(key, value)
 
     end
   end
